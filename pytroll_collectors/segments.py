@@ -484,7 +484,11 @@ class SegmentGatherer(object):
         mda = _copy_without_ignore_items(mda,
                                          ignored_keys=ignored_keys)
 
+        self.logger.debug("***** This is mda: {}".format(mda))
+        self.logger.debug("***** This is key: {}".format(key))
+
         mask = self._parsers[key].globify(mda)
+        self.logger.debug("***** This is mask: {}".format(mask))
         if mask in slot['received_files']:
             self.logger.debug("File already received")
             return
