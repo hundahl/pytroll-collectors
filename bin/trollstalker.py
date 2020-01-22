@@ -61,7 +61,7 @@ class EventHandler(ProcessEvent):
                  custom_vars=None, nameservers=[], watchManager=None):
         super(EventHandler, self).__init__()
 
-        self._pub = NoisyPublisher("trollstalker", posttroll_port, topic,
+        self._pub = NoisyPublisher("trollstalker", posttroll_port,
                                    nameservers=nameservers)
         self.pub = self._pub.start()
         self.topic = topic
